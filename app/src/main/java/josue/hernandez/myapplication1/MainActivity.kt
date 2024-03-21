@@ -1,6 +1,9 @@
 package josue.hernandez.myapplication1
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,20 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val txtAño = findViewById<EditText>(R.id.txtAño)
+        val btnFecha = findViewById<Button>(R.id.btnFecha)
+        val lblNacimiento = findViewById<TextView>(R.id.lblNacimiento)
+
+        val objNaci = fechaHacimiento()
+
+        btnFecha.setOnClickListener {
+            val resul =objNaci.fecha(txtAño.text.toString().toInt())
+
+        }
+
+
+
+
     }
 }
